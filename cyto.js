@@ -58,7 +58,8 @@ window.onload = function() {
         'content': 'data(value)',
         'text-valign': 'center',
         'color': 'white',
-        'background-color': '#666'//,
+        //'background-color': '#666'//,
+        'background-color': '#6200EE'
         //'label': 'data(id)'
       }
     },
@@ -67,12 +68,12 @@ window.onload = function() {
       selector: 'edge',
       style: {
         'width': 2,
-        'line-color': '#ccc',
+        'line-color': '#03DAC6',
         'curve-style': 'bezier', // .. and target arrow works properly
         'text-margin-y' : - 8,
         "text-rotation" : "autorotate",
         // 'target-distance-from-node' : 2,
-        'target-arrow-color': '#ccc',
+        'target-arrow-color': '#018786',
         'target-arrow-shape': 'triangle'
       }
     }
@@ -158,6 +159,8 @@ window.onload = function() {
     }
 
   document.getElementById("maxSort").addEventListener("click",function(){
+    document.getElementById("maxSort").disabled=true
+    document.getElementById("minSort").disabled=true
     for(let i = Math.floor(size/2)-1;i>=0;i--){
             minHeapify(i);
           }
@@ -236,6 +239,8 @@ window.onload = function() {
   });
 
   document.getElementById("minSort").addEventListener("click",function(){
+    document.getElementById("maxSort").disabled=true
+    document.getElementById("minSort").disabled=true
     for(let i = Math.floor(size/2)-1;i>=0;i--){
             maxHeapify(i);
           }
