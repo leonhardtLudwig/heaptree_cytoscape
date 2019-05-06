@@ -2,17 +2,15 @@
 ## ITIS C. Zuccante A.S. 2018/2019
 ### Classe 4^IB
 
-# Documentazione classe `HeapTree`
+# Documentazione `HeapTree With Cytoscape.js`
 
 ## Struttra del progetto
 
 - La seguente classe permette di creare un `HeapTree` e di effettuare una serie di azioni su di esso
 - È possibile effettuare operazioni di ordinamento dell'`HeapTree` decidendo pure se deve essere ordinato per valori decrescenti (`maxHeapSort`) o valori crescenti (`minHeapSort`)
-- Sono pure stati resi disponibili due metodi implementati nel sorting (`maxHeapify` e `minHeapify`) che permettono lo scambio di due o più nodi in maniera ricorsiva in base al valore del nodo genitore e dei nodi figli (vedere descrizione dei metodi per maggiori informazioni)
 - È possibile aggiungere uno o più nodi alla fine dell'`HeapTree` (aggiunta di foglie)
-- È possibile eliminare l'ultimo nodo alla fine dell'`HeapTree` (eliminazione ultima foglia)
 - L'intera struttura dati è contenuta all'interno di un array di oggetti `Node`
-- Ogni `Node` contiene un valore e la sua posizione all'interno dell'`HeapTree`
+- Ogni `Node` è un oggetto definito dalla libreria `Cytoscape.js`
 
 ## Descrizione algoritmi di sorting
 ### [Clicca qui per visualizzare la pagina originale dalla quale sono state prese queste gif](https://medium.com/@parulbaweja8/a-closer-look-at-heapsort-c83b331f8353)
@@ -29,21 +27,20 @@
 - Lo swapping avviene tra il primo e l'ultimo elemento dell'`HeapTree` il cui indice corrisponde a `size` (variabile che in questo momento viene modificata per poi essere ripristinata)
 - Dopo aver effettuato lo swapping si procede con il `maxHeapify` del primo elemento all'interno dell'`HeapTree`
 - I precedenti due passaggi verranno eseguiti fino a quando non si arriverà al primo elemento dell'`HeapTree`
-- Di seguito verrà visualizzato il codice del metodo `minHeapSort` (il codice sarà riportato nuovamente all'interno della documentazione dei metodi pubblibi )
-
+- Di seguito verrà visualizzato il codice della funzione `minHeapSort` (il codice sarà riportato nuovamente all'interno della documentazione dei metodi pubblibi )
+- Viene riportata solo una parte della funzione essendo che, all'interno di essa, vengono eseguite funzioni di manipolazione del DOM
 ```
-//HEAPIFY
-for(int i = size/2-1;i>=0;i--)
-    maxHeapify(i);
-int oldSize = size;
-//SWAPPING
-for (size-=1; size>=0; size--)
-{
-    swap(heap[0], heap[size]);
-    maxHeapify(0);
-}
-size = oldSize;//essendo che lavoro con un parametro dell'heap e voglio comunque mantenerlo nel tempo per altre operazioni, sfrutto questa variabile di supporto
-
+for(let i = Math.floor(size/2)-1;i>=0;i--){
+        maxHeapify(i);
+      }
+    let oldSize = size;
+    for(let i = heap.length-1;i>0;i--)
+    {
+        [heap[0], heap[i]]=[heap[i], heap[0]]
+        size--
+        maxHeapify(0);
+    }
+    size = oldSize
 ```
 
 ## Main Class `HeapTree`
