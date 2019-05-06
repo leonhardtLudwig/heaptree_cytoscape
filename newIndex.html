@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cyto</title>
+	  <script src="https://unpkg.com/cytoscape@3.5.3/dist/cytoscape.min.js"></script>
+    <script src="cyto.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <span class="title is-1 tit">Heap Tree</span>
+    <span class="subtitle is-5 tit">With Cytoscape.js</span>
+    <div id="cy" class="box"></div>
+    <div id="buttons">
+
+      <button id="addNode" class="button is-primary is-rounded b">add node</button>
+      <button id="randomLayout" class="button is-link is-rounded b">randomize layout</button>
+      <button id="heapLayout" class="button is-info is-rounded b"> heap layout</button>
+      <button id="maxSort" class="button is-success is-rounded b"> max heap sort</button>
+      <button id="minSort" class="button is-warning is-rounded b"> min heap sort</button>
+      <a href="https://github.com/leonhardtLudwig/heaptree_cytoscape" class="button">
+    <span class="icon">
+      <i class="fab fa-github"></i>
+    </span>
+    <span>GitHub</span>
+  </a>
+    </div>
+  </body>
+</html>

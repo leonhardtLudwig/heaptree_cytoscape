@@ -1,0 +1,26 @@
+body {
+  font-family: helvetica;
+  font-size: 14px;
+}
+
+#cy {
+  margin-top: 120px;
+  margin-left: 5%;
+  width: 90%;
+  height: 85%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  float: right;
+}
+#buttons{
+  float: left;
+  margin-right:auto;
+}
+.b{
+  width:350px;
+}
+.tit{
+  margin-right: 10px;
+}
