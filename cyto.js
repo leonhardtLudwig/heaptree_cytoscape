@@ -128,6 +128,12 @@ window.onload = function() {
       layout.run();
   });
 
+  function printHeap(){
+    for(let i = 0; i<heap.length;i++){
+      console.log(heap[i]._private.data.value)
+    }
+  }
+
   function minHeapify(i){
     let largest_pos = i
     if (i*2+1 < size && heap[i*2+1]._private.data.value< heap[largest_pos]._private.data.value){
