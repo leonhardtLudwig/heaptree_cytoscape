@@ -18,7 +18,11 @@ let heapLayout = {
   padding: 10,
   animate: true
 }
-
+function printHeap(){
+  for(let i = 0; i<heap.length;i++){
+    console.log(heap[i]._private.data.value)
+  }
+}
 //let nodo = localStorage.getItem("nodo")
 function levelCounter(){
     let maxNodes = Math.pow(2, lvlCounter)
@@ -128,11 +132,6 @@ window.onload = function() {
       layout.run();
   });
 
-  function printHeap(){
-    for(let i = 0; i<heap.length;i++){
-      console.log(heap[i]._private.data.value)
-    }
-  }
 
   function minHeapify(i){
     let largest_pos = i
