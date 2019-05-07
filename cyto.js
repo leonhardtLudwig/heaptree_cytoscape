@@ -20,7 +20,7 @@ let heapLayout = {
 }
 function printHeap(){
   for(let i = 0; i<heap.length;i++){
-    console.log(heap[i]._private.data.value)
+    console.log(heap[i][0]._private.data.value)
   }
 }
 //let nodo = localStorage.getItem("nodo")
